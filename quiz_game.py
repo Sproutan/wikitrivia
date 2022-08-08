@@ -36,17 +36,23 @@ def quizgame():
         
         global correct_score
         global incorrect_score
+        def scoreboard():
+                print("You have answered " + str(incorrect_score) + " questions incorrectly")
+                print("You have answered " + str(correct_score) + " questions correctly")
     
-        print(incorrect_score)
-        print(correct_score)
 
         if answer ==  (str(45)):
             print("Correct! ")
             correct_score += 1
+            scoreboard()
             wikipedia_question()
+            
         else:
             print("Oops, that wasn't the right answer ")
             incorrect_score += 1
+            scoreboard()
+            print(incorrect_score)
+            print(correct_score)
 
             if incorrect_score > 3:
                 print("Game over!")
